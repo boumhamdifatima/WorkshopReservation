@@ -1,0 +1,315 @@
+@charset "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	background: #FFFFFF url(images/img01.gif) repeat-x;
+	font: normal small "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #333333;
+}
+
+h1, h2, h3 {
+	color: #333333;
+}
+h1 {
+	margin-bottom: 20px;
+}
+
+
+h3 {
+	font-size: 1em;
+}
+
+p, blockquote, ul, ol {
+	margin-bottom: 1.5em;
+	line-height: 1.8em;
+	text-align: justify;
+}
+
+blockquote {
+	margin-left: 2em;
+	margin-right: 2em;
+	font-style: italic;
+}
+
+ul {
+	margin-left: 3em;
+}
+
+
+ol {
+	margin-left: 3em;
+}
+
+
+a {
+	text-decoration: none;
+	color: #972296;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #000000;
+}
+
+img.left {
+	float: left;
+	margin: 0 20px 0 0;
+}
+
+img.right {
+	float: right;
+	margin: 0 0 0 20px;
+}
+
+/* Boxed Style */
+
+.boxed .title {
+	padding: 10px 20px;
+	text-transform: uppercase;
+	font-size: 1em;
+}
+
+.boxed .content {
+	padding: 20px;
+	background: url(images/img05.gif) repeat-x;
+}
+
+/* Post */
+
+
+.post .title {
+	padding: 10px 20px;
+	text-transform: uppercase;
+	font-size: 1em;
+}
+
+.post .date {
+	margin-top: -25px;
+	padding-bottom: 10px;
+	padding-right: 20px;
+	text-align: right;
+	font-size: x-small;
+}
+
+.post .meta {
+	clear: both;
+}
+
+.post .meta p {
+	margin: 0;
+	padding: 10px 20px 40px 20px;
+	border-top: 1px dotted #CCCCCC;
+	line-height: normal;
+	font-size: x-small;
+}
+
+.post .story {
+	padding: 20px 20px 0 20px;
+	background: url(images/img05.gif) repeat-x;
+}
+
+/* Header */
+
+#header {
+	width: 760px;
+	height: 140px;
+	margin: 0 auto;
+}
+
+/* Header > Logo */
+
+#logo {
+	float: left;
+	width: 240px;
+	height: 50px;
+}
+
+#logo h1 {
+	margin: 0;
+	padding: 60px 0 0 0;
+	font-size: 2.6em;
+}
+
+#logo h2 {
+	margin-top: -5px;
+	font-size: 1em;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #000000;
+}
+
+/* Header > Menu */
+
+#menu {
+	float: right;
+}
+
+#menu ul {
+	margin: 0;
+	padding-top: 76px;
+	list-style: none;
+}
+
+#menu li {
+	display: inline;
+}
+
+#menu a {
+	display: block;
+	float: left;
+	height: 24px;
+	margin-left: 10px;
+	padding: 15px;
+	background: url(images/img02.gif) repeat-x;
+	text-decoration: none;
+	font-weight: bold;
+	color: #000000;
+}
+
+#menu a:hover {
+	background-image: url(images/img04.gif);
+	color: #FFFFFF;
+}
+
+#menu .active a {
+	background-image: url(images/img03.gif);
+	color: #FFFFFF;
+}
+
+/* Content */
+
+#content {
+	width: 960px;
+	margin: 0 auto;
+	min-height: 400px;
+	padding-top: 20px;
+}
+
+/* Content > Main */
+
+#main {
+	float: left;
+	width: 100%;
+	background: url(images/background.jpg) no-repeat;
+	background-size:cover;
+    background-position: center;
+    height:890px;
+	margin-bottom: 30px;
+}
+
+/* Content > Main > Welcome */
+
+#welcome {
+	width: 30%;
+	height: 230px;
+	position: fixed;
+	right: 35%;
+	top: 300px;
+	background: purple;
+	color : white;
+	text-align: center;
+	border-radius: 12px;
+	box-shadow: 20px 20px 20px 10px gray;
+	
+}
+#welcome h1{
+	color: white;
+	padding: 15px;
+	font-size: 32px;
+}
+#welcome p{
+	padding: 10px;
+	font-size: 16px;
+	text-align: center;
+}
+
+/* Content > Main > Example */
+
+/* Footer */
+
+#footer {
+	clear: both;
+	width: 100%;
+	height: 80px;
+	margin: 0 auto;
+	padding: 30px 50px;
+	background: url(images/img07.gif) repeat center top;
+}
+
+#footer p {
+	margin: 0;
+	text-align: center;
+	line-height: normal;
+	font-size: small;
+}
+
+#footer a {
+	text-decoration: underline;
+	color: #666666;
+}
+
+#footer a:hover {
+	text-decoration: none;
+}
+
+table {
+	width: 100%;
+}
+table th {
+	background-color: rgb(244, 225, 244);
+}
+
+#tbfirst td {
+	vertical-align: top;
+	padding-left: 2px;
+}
+#tbsecond td, #tbthird td {
+	text-align: center;
+}
+
+#tbsecond tr:nth-child(even){background-color: #f2f2f2;}
+
+#tbsecond tr:hover {background-color: #ddd;}
+
+.btntab {
+	width: 100%;
+	border-radius: 5px;
+	cursor: pointer;
+}
+#tbfoth {
+	margin-bottom: 30px;
+}
+#tbfoth td, #tbfifth td {
+	height: 26px;
+}
+.formul {
+	width: 60%;
+	margin: auto;
+}
+#tbfifth th {
+	background-color: rgb(132, 132, 255);
+}
+#tbfifth th h2{
+	color: white;
+}
+#tbfifth input{
+	width: 100%;
+}
+
+#btnreserver {
+	height: 30px;
+	width: 100px;
+	background-color: plum;
+	border-radius: 5px;
+	font-size: 20px;
+	cursor: pointer;
+}
+div.formul {
+	padding-bottom: 50px;
+}

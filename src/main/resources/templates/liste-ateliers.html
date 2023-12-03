@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Artisana</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="header">
+        <div id="logo">
+            <h1><a href="/">ARTISANA</a></h1>
+            <h2><a href="/">Vos meilleurs ateliers</a></h2>
+        </div>
+        <div id="menu">
+            <ul>
+                <li class="active"><a href="/">Accueil</a></li>
+                <li><a th:href="@{/ateliers}">Liste Ateliers</a></li>
+                <li><a th:href="@{/reservations}">Liste Réservations</a></li>
+                <li><a href="#">Nous contacter</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="content">
+        <h1>Liste des Ateliers</h1>
+		<table border="1" id="tbfirst">
+		    <thead>
+		        <tr>
+		            <th>ID</th>
+		            <th>Nom</th>
+		            <th>Description</th>
+		            <th>Artisan</th>
+		            <th style="width: 12%;">Date Début</th>
+		            <th style="width: 12%;">Date Fin</th>
+		            <th style="width: 12%;">Places<br/>Disp.</th>
+		            <th style="width: 12%;">Réserver</th>
+		            <!-- Autres en-têtes de colonne selon vos besoins -->
+		        </tr>
+		    </thead>
+		    <tbody>
+		        <tr th:each="atelier : ${ateliers}">
+		            <td th:text="${atelier.atelierId}"></td>
+		            <td th:text="${atelier.nom}"></td>
+		            <td th:text="${atelier.description}"></td>
+		            <td th:text="${atelier.artisan.getPrenom()} +' ' + ${atelier.artisan.getNom()}"></td>
+		            <td colspan="4">
+		            <table id="tbsecond">
+			            <tr th:each="creneau, creneauIndex : ${atelier.creneaux}">
+			                <td style="width: 25%;">
+			                    <span th:text="${#temporals.format(creneau.dateDebut, 'yyyy-MM-dd HH:mm', 'UTC')}"></span>
+			                </td>
+			                <td style="width: 25%;">
+			                    <span th:text="${#temporals.format(creneau.dateFin, 'yyyy-MM-dd HH:mm', 'UTC')}"></span>
+			                </td>
+			                <td style="width: 25%;">
+			                    <span th:text="${creneau.placesDisponibles}"></span>
+			                </td>
+			                <td style="width: 25%;">
+			                    <a th:href="@{/reserverAtelier(atelierId=${atelier.atelierId}, creneauId=${creneau.creneauId})}">
+			                        <button class="btntab" th:if="${creneau.placesDisponibles > 0}">Réserver</button>
+			                        <button class="btntab" th:if="${creneau.placesDisponibles == 0}" th:disabled="disabled">Réserver</button>
+			                    </a>
+			                </td>
+			               
+			            </tr>
+		            </table>
+		            </td>
+		        </tr>
+		    </tbody>
+		</table>
+
+    </div>
+    <div id="footer">
+        <p id="legal">Copyright &copy; 2007 ARTISANA. All Rights Reserved.</p>
+    </div>
+    
+</body>
+</html>

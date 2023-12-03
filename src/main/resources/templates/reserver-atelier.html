@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Artisana</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="header">
+        <div id="logo">
+            <h1><a href="/">ARTISANA</a></h1>
+            <h2><a href="/">Vos meilleurs ateliers</a></h2>
+        </div>
+        <div id="menu">
+            <ul>
+                <li class="active"><a href="/">Accueil</a></li>
+                <li><a th:href="@{/ateliers}">Liste Ateliers</a></li>
+                <li><a th:href="@{/reservations}">Liste Réservations</a></li>
+                <li><a href="#">Nous contacter</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="content">
+            <h1>Réserver un Atelier</h1>
+
+			<div th:if="${atelier.isPresent() && creneau.isPresent()}">
+				<table id="tbfoth">
+					
+					<tr>
+						<th colspan="2"><h2>Informations sur l'Atelier</h2></th>
+						<td style="width: 10%;"></th>
+						<th colspan="2"><h2>Informations sur le Créneau</h2></th>
+					</tr>
+					<tr>
+						<td>ID Atelier:</td>
+						<td th:text="${atelier.get().atelierId}"></td>
+						<td></td>
+						<td>ID Créneau: </td>
+						<td th:text="${creneau.get().creneauId}"></td>
+					</tr>
+					<tr>
+						<td>Nom Atelier: </td>
+						<td th:text="${atelier.get().nom}"></td>
+						<td></td>
+						<td>Date Début Créneau: </td>
+						<td th:text="${#temporals.format(creneau.get().dateDebut, 'yyyy-MM-dd HH:mm', 'UTC')}"></td>
+					</tr>
+					<tr>
+						<td>Description Atelier: </td>
+						<td th:text="${atelier.get().description}"></td>
+						<td></td>
+						<td>Date Fin Créneau: </td>
+						<td th:text="${#temporals.format(creneau.get().dateFin, 'yyyy-MM-dd HH:mm', 'UTC')}"></td>
+					</tr>
+				</table>
+				<div class="formul">
+					<table id="tbfifth">
+						<form th:action="@{/reserverAtelier}" method="post" th:object="${participant}">
+				
+							<tr>
+								<th colspan="2"><h2>Informations du Participant</h2></th>
+							</tr>
+							<tr>
+								<td  style="width: 30%;">
+									<input type="hidden" id="atelierId" name="atelierId" th:value="${atelier.get().atelierId}" />
+								</td>
+								<td>
+									<input type="hidden" id="creneauId" name="creneauId" th:value="${creneau.get().creneauId}" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="email">E-mail Participant:</label>
+								</td>
+								<td>
+									<input type="email" id="email" name="email" th:field="*{email}" required>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="nom">Nom Participant:</label>
+								</td>
+								<td>
+									<input type="text" id="nom" name="nom" th:field="*{nom}" required>
+								</td>
+							</tr>
+							<tr>
+								<td><label for="prenom">Prénom Participant:</label></td>
+								<td>
+									<input type="text" id="prenom" name="prenom" th:field="*{prenom}" required>
+								</td>
+							</tr>
+							<tr>
+								<td><label for="notel">Téléphone Participant:</label></td>
+								<td>
+									<input type="text" id="notel" name="notel" th:field="*{noTel}" required>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><button id="btnreserver" type="submit">Réserver</button></td>
+								
+							</tr>
+						</form>
+					</table>
+				</div>
+					
+				
+				
+			</div>
+
+			<div th:unless="${atelier.isPresent() && creneau.isPresent()}">
+				<p>Les informations sur l'atelier ou le créneau sont introuvables.</p>
+			</div>
+		</div>
+    <div id="footer">
+        <p id="legal">Copyright &copy; 2007 ARTISANA. All Rights Reserved.</p>
+    </div>
+</body>
+</html>
