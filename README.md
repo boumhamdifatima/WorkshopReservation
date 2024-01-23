@@ -12,12 +12,18 @@ Before starting this project, make sure you have installed the following softwar
 
 ## Install
 
-1- Clone this repository on your local machine:
+1. Clone this repository on your local machine:
+
    git clone https://github.com/boumhamdifatima/WorkshopReservation
-2- Import the project into your IDE.
-3- Configure your database by modifying the application.properties file to add your database connection information.
-4- Run the application
-5- Access the application in your browser at the following address: http://localhost:8080
+
+
+2. Import the project into your IDE.
+
+3. Configure your database by modifying the `application.properties` file to add your database connection information.
+
+4. Run the application.
+
+5. Access the application in your browser at the following address: [http://localhost:8080](http://localhost:8080)
 
 ## Features
 
