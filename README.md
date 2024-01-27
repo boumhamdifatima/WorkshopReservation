@@ -14,7 +14,7 @@ Before starting this project, make sure you have installed the following softwar
 
 1. Clone this repository on your local machine:
 
-   git clone https://github.com/boumhamdifatima/WorkshopReservation
+   git clone https://github.com/boumhamdifatima/WorkshopReservation.git
 
 
 2. Import the project into your IDE.
