@@ -44,10 +44,15 @@ This feature allows you to display the list of reservations
 If you would like to contribute to this project, please follow these steps:
 
    Fork the project
+   
    Create a new branch (git checkout -b feature/new-feature)
+   
    Make changes and add features
+   
    Commit changes (git commit -am 'Add new feature')
+   
    Push changes to the branch (git push origin feature/new-feature)
+   
    Create a new Pull Request 
 
 ## Author 
