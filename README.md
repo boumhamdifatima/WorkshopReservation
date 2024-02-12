@@ -5,7 +5,7 @@ This is a craft workshop booking web application ARTISANA where customers can br
 ## ARTISANA Description
 
 The ARTISANA project is a web application developed using Spring Boot, JPA and Mysql for data persistence. It uses Thymeleaf as a templating engine for the MVC part and demonstrates how to create a simple web application with dynamic pages
-This is a booking app for craft workshops where customers can browse different workshops, book slots, and manage their bookings. Artisans will be able to set up their workshops, manage available slots, and follow reservations.
+This is a booking app for craft workshops where customers can browse different workshops, book slots and manage their bookings. Artisans will be able to set up their workshops, manage available slots, and follow reservations.
 
 ## Prerequisites
 Before starting this project, make sure you have installed the following software: • Java JDK 11 or later • Maven • A Java IDE (like IntelliJ IDEA, Eclipse, etc.)
